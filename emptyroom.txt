@@ -2,16 +2,26 @@
 # Hashtag lines are optional comments
 #
 
-# state 0 with nothing N: go one step N
-0 x*** -> N 0   
+# guides box to bottom right corner
+0 xx** -> E 0  # moves east until it hits a wall
+0 *E** -> X 1  # once picobot hits wall, move south, change to # state 1
 
 # state 0 with something to the N: go W + into st 1 
 # ** This will crash if picobot has a wall to the W! **
-0 N*** -> W 1 
 
 
 # state 1 with nothing to the S: go one step S
-1 ***x -> S 1   
+1 ***x -> S 1  # moves south until it hits a corner
 
-# state 1 with something to the S: west + into state 0
-1 ***S -> W 0   
+
+1 *E*S -> N 2
+
+# moves picobot to the top
+2 x*** -> N 2
+
+# moves picobot west one space
+2 N*** -> W 1
+
+# moves picobot back up north
+1 *x*S -> W 2
+
