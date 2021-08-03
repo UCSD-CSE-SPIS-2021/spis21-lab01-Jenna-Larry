@@ -1,0 +1,16 @@
+# Assign each state a cardinal direction
+# N = 0, E = 1, W = 2, S = 3
+
+0 xE** -> N 0
+0 NxW* -> E 1
+0 NEx* -> W 2
+
+
+
+1 N**S -> E 1
+1 NE*x -> S 3
+
+2 x*WS -> N 0
+2 N*WS -> E 1
+
+3 xxWS -> E 1
